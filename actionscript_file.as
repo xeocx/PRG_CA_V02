@@ -11,6 +11,10 @@ function stage_keyDownHandler(event:KeyboardEvent):void
 	{
 		rightKeyPressed = true;
 	} 
+	if (event.keyCode == Keyboard.LEFT)
+	{
+		leftKeyPressed = true;
+	}
 }
 
 function stage_keyUpHandler(event:KeyboardEvent):void
@@ -26,5 +30,11 @@ function stage_enterFrameHandler(event:Event):void
 		myCharacter.x += 0;
 		foregroundFar.x -= 3;
 		foregroundNear.x -= 5;
+	}
+	if (leftKeyPressed == true)
+	{
+		myCharacter.x += 0;
+		foregroundFar.x +=3;
+		foregroundNear.x += 5;
 	}
 }
