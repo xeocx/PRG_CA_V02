@@ -49,6 +49,10 @@ function stage_enterFrameHandler(event:Event):void
 	{
 		myCharacter.y -= 4;
 	}
+	while (myCharacter.y < 610 && upKeyPressed == false)
+	{
+		myCharacter.y += 2;
+	}
 	//Enabling character to move right
 	if (rightKeyPressed == true && myCharacter.x == stage.stageWidth*0.75)
 	{
