@@ -1,5 +1,6 @@
 ﻿var leftKeyPressed: Boolean = false;
 var rightKeyPressed: Boolean = false;
+var upKeyPressed: Boolean = false;
 
 stage.addEventListener(KeyboardEvent.KEY_DOWN, stage_keyDownHandler);
 stage.addEventListener(KeyboardEvent.KEY_UP, stage_keyUpHandler);
@@ -15,16 +16,22 @@ function stage_keyDownHandler(event:KeyboardEvent):void
 	{
 		rightKeyPressed = true;
 	}
+	if (event.keyCode == Keyboard.UP)
+	{
+		upKeyPressed = true;
+	}
 }
 
 function stage_keyUpHandler(event:KeyboardEvent):void
 {
 	leftKeyPressed = false;
 	rightKeyPressed = false;
+	upKeyPressed = false;
 }
 
 function stage_enterFrameHandler(event:Event):void
 {
+	// Enabling character movement left
 	if (leftKeyPressed == true && myCharacter.x == stage.stageWidth*0.25)
 	{
 		myCharacter.x += 0;
@@ -37,6 +44,12 @@ function stage_enterFrameHandler(event:Event):void
 		foregroundFar.x += 0;
 		foregroundNear.x += 0;
 	}
+	//Enabling character to jump
+	if (upKeyPressed == true)
+	{
+		myCharacter.y -= 4;
+	}
+	//Enabling character to move right
 	if (rightKeyPressed == true && myCharacter.x == stage.stageWidth*0.75)
 	{
 		myCharacter.x += 0;
