@@ -37,16 +37,16 @@ function stage_enterFrameHandler(event:Event):void
 		foregroundFar.x += 0;
 		foregroundNear.x += 0;
 	}
+	if (rightKeyPressed == true && myCharacter.x == stage.stageWidth*0.75)
+	{
+		myCharacter.x += 0;
+		foregroundFar.x -= 3;
+		foregroundNear.x -= 5;
+	}
 	else if (rightKeyPressed == true && myCharacter.x <= stage.stageWidth*0.75)
 	{
 		myCharacter.x += 4;
 		foregroundFar.x += 0;
 		foregroundNear.x += 0;
-	}
-	else if (rightKeyPressed == true && myCharacter.x == stage.stageWidth*0.75)
-	{
-		myCharacter.x += 0;
-		foregroundFar.x -= 3;
-		foregroundNear.x -= 5;
 	}
 }
